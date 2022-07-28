@@ -7,22 +7,23 @@ export default {
     htmlAttrs: {
       lang: "de",
     },
-    title: process.env.npm_package_name || "",
+    title: "khri8!™ more playgrounds",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content:
-          "Wir sorgen in Ihrer Mittagspause mit täglich wechselnden und frisch zubereiteten Gerichten, Tagessuppen und Salaten (solange der Vorrat reicht) für Ihr Wohl.",
+        content: "Creative Direction, Artworks, Design &amp; Communication",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/khri8-brand-image.png" },
+    ],
     link: [
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap",
+        href: "https://use.typekit.net/vfj3ucf.css",
       },
     ],
   },
@@ -30,7 +31,11 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/generatePDF.js" }],
+  plugins: [
+    {
+      src: "~/plugins/generatePDF.js",
+    } /* , { src: "~/plugins/swiper.js", ssr: false } */,
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -70,7 +75,17 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    standalone: true,
+    extend(config, ctx) {
+      // fix to work with swiperjs 8 add needed deps. you can get them from error when doing nuxt generate
+      config.externals = [
+        {
+          encoding: "encoding",
+        },
+      ];
+    },
+  },
 
   router: {
     scrollBehavior(to) {

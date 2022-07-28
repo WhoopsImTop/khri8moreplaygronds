@@ -1,39 +1,27 @@
 <template>
   <div>
-    <Header></Header>
-    <div class="content-container" style="margin-top: 130px;">
-      <h1 style="margin-bottom: 0px;">Täglich frisch.<br>
-        Lecker Essen.</h1>
-      <h3 style="margin-top: 0px; text-transform: uppercase; font-weight: 400">Morgens <span class="green">|</span>
-        Mittags <span class="green">|</span> Abends</h3>
-      <div class="grid">
-        <nuxt class="grid-item-1" />
-        <div class="grid-item-2"></div>
-        <Sidebar class="grid-item-3" />
-      </div>
-    </div>
-    <Footer></Footer>
+    <Sidebar></Sidebar>
+    <Nuxt class="content"></Nuxt>
   </div>
 </template>
 
 <script>
-import Header from '../components/Header.vue';
 import Sidebar from '../components/Sidebar.vue';
-import Footer from '../components/Footer.vue';
 export default {
   fetch() {
-    this.$store.dispatch('getInfos');
-    this.$store.dispatch('getSidebarNav');
-    this.$store.dispatch('getMainMenus');
-    this.$store.dispatch('getOtherMenus');
+    this.$store.dispatch('getTheTeam');
+    this.$store.dispatch('getTheContent');
+    this.$store.dispatch('getThePortfolioLogos');
+    this.$store.dispatch('getThePortfolio');
   },
-  components: { Header, Sidebar, Footer },
+  components: { Sidebar },
 };
 </script>
 
 <style>
 * {
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-family: karmina-sans, sans-serif;
+  ;
 }
 
 body {
@@ -42,46 +30,47 @@ body {
 }
 
 :root {
-  --text-dark: #000000;
-  --orange-color: #e83414;
-  --green-color: #539E33;
-  --menu-bg-color: #FFF5EC;
+  --paragraph-dark: #666666;
+  --paragraph-light: #ffffff;
+  --heading-dark: #333333;
+  --primary-color: #df1874;
+  --ideen-color: #0387d4;
+  --gray-color: #eeeeee;
+  --menu-bg-color: #ffffff;
   --menu-border-color: #000000;
+  --paragraph-font-size: 18px;
 }
 
 h1 {
-  font-size: 80px;
-  line-height: 90px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-size: 50px;
+  line-height: 1em;
+  font-weight: 800;
+  color: var(--heading-dark);
 }
 
 h2 {
   font-size: 40px;
-  line-height: 50px;
-  text-transform: uppercase;
+  line-height: 1em;
+  font-weight: 800;
+  color: var(--heading-dark);
 }
 
 h3 {
-  font-size: 40px;
-  line-height: 50px;
+  font-size: 30px;
+  line-height: 1em;
+  font-weight: 800;
+  color: var(--heading-dark);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 8fr 1fr 3fr;
+p {
+  font-size: 18px;
+  line-height: 1.5em;
+  color: var(--paragraph-dark);
 }
 
-.grid-item-1 {
-  grid-column: 1
-}
-
-.grid-item-2 {
-  grid-column: 2
-}
-
-.grid-item-3 {
-  grid-column: 3
+a {
+  font-size: 18px;
+  line-height: 1.5em;
 }
 
 .content-container {
@@ -90,22 +79,71 @@ h3 {
   margin: 0 auto;
 }
 
-.green {
-  color: var(--green-color)
+.content {
+  max-width: calc(100vw - 225px);
+  margin-left: 225px;
 }
 
-@media (max-width: 1349px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+button {
+  background-color: transparent;
+  border: 3px solid var(--paragraph-light);
+  padding: 10px 15px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: karmina-sans, sans-serif;
+  color: var(--paragraph-light);
+  font-weight: 600;
+  letter-spacing: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .5s;
+}
 
-  .grid-item-1 {
-    grid-column: 1
-  }
+button::after {
+  content: '';
+  width: 0px;
+  height: 20px;
+  background-image: url('/symbols/check.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+}
 
-  .grid-item-3 {
-    grid-column: 1
-  }
+button:hover {
+  border-color: transparent;
+}
+
+button:hover::after {
+  content: '';
+  width: 20px;
+  margin-left: 5px;
+  height: 20px;
+  background-image: url('/symbols/check.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+}
+
+input {
+  border: 3px solid var(--paragraph-light);
+  padding: 8px 15px;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: karmina-sans, sans-serif;
+  color: var(--paragraph-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .5s;
+}
+
+input:focus {
+  outline: 1px solid var(--paragraph-light);
 }
 
 @media (max-width: 900px) {
@@ -131,18 +169,6 @@ h3 {
 
   .content-container {
     padding: 0 30px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-item-1 {
-    grid-column: 1
-  }
-
-  .grid-item-3 {
-    grid-column: 1
   }
 }
 </style>

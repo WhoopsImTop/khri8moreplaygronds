@@ -1,55 +1,64 @@
 <template>
-  <div class="sidebar">
-    <h2>{{ $store.state.infos[0].title }}</h2>
-    <div class="notice-bon">
-      <p v-html="$md.render($store.state.infos[0].content)"></p>
-    </div>
+    <div class="navigation-background">
+        <div class="navigation-content-container">
+            <nuxt-link to="/">
+                <KostbarLogo class="grid-item-1" width="150" title="kost|bar Waldkirch" alt="kost|bar Waldkirch Logo" />
+            </nuxt-link>
 
-    <div v-for="link in $store.state.sidebarNavigation" :key="link.title">
-      <h2 style="margin-bottom: 0px;">{{ link.title }}</h2>
-      <span v-show="link.subtitle">{{ link.subtitle }}</span>
-      <p v-html="$md.render(link.description)"></p>
-      <nuxt-link v-if="link.link" :to="link.link" class="link">{{ link.linkText }}</nuxt-link>
+            <div class="link-container">
+                <nuxt-link to="/#team">Team</nuxt-link>
+                <nuxt-link to="/#agentur">Agentur</nuxt-link>
+                <nuxt-link to="/#kunden">Kunden</nuxt-link>
+                <nuxt-link to="/#kontakt">Kontakt</nuxt-link>
+            </div>
+
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
+import KostbarLogo from './KostbarLogo.vue';
 export default {
+    components: {
+        KostbarLogo
+    },
+    data: () => {
+        return {
+            active: false
+        }
+    }
 }
 </script>
 
 <style>
-.notice-bon {
-  background-image: url('/img/menu-bg.png');
-  background-size: cover;
-  background-position: bottom;
-  padding: 10px 20px 40px 20px;
-  border-top: 3px solid var(--orange-color);
+.navigation-background {
+    padding: 40px 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 225px;
+    height: 100%;
 }
 
-.notice-bon p {
-  margin: 0;
+.link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
 }
 
-.link {
-  color: var(--orange-color);
-  text-decoration: none;
-  font-style: italic;
-  text-decoration: underline;
+.link-container a {
+    text-decoration: none;
+    color: var(--heading-dark);
+    font-size: var(--paragraph-font-size);
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-@media (max-width: 1349px) {
-  h2 {
-    margin-top: 50px;
-  }
-}
-
-@media (max-width: 900px) {
-  .notice-bon {
-    background-color: var(--menu-bg-color);
-    padding: 10px 20px 20px 20px;
-    border-top: 3px solid var(--orange-color);
-  }
+.link-container a:hover {
+    color: var(--primary-color);
 }
 </style>

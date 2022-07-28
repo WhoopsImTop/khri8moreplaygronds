@@ -1,60 +1,54 @@
 export const state = () => ({
-  sidebarNavigation: [{
-    title: '',
-    subtitle: '',
-    description: '',
-    linkText: ''
-  }],
-  infos: [{
-    title: '',
-    content: '',
-  }],
-  mainMenus: [],
-  subMenus: [],
+  team: [],
+  content: [],
+  portfolioLogos: [],
+  portfolio: [],
 });
 
 export const getters = {
-    getSidebarNav: (state) => JSON.parse(state.sidebarNavigation),
-    
-    getInfos: (state) => JSON.parse(state.infos),
-    
-    getMainMenus: (state) => JSON.parse(state.mainMenus),
-
-    setSubMenus: (state) => JSON.parse(state.subMenus),
-}
+  getTheTeam: (state) => JSON.parse(state.team),
+  getTheContent: (state) => JSON.parse(state.content),
+  getThePortfolioLogos: (state) => JSON.parse(state.portfolioLogos),
+  getThePortfolio: (state) => JSON.parse(state.portfolio),
+};
 
 export const mutations = {
-  setSidebarNavigation(state, payload) {
-    state.sidebarNavigation = payload;
+  setTheTeam(state, payload) {
+    state.team = payload;
   },
-  setInfos(state, payload) {
-    state.infos = payload;
+  setTheContent(state, payload) {
+    state.content = payload;
   },
-  setMainMenus(state, payload) {
-    state.mainMenus = payload;
+  setThePortfolioLogos(state, payload) {
+    state.portfolioLogos = payload;
   },
-  setSubMenus(state, payload) {
-    state.otherMenus = payload;
-  },
+  setThePortfolio(state, payload) {
+    state.portfolio = payload;
+  }
 };
 
 export const actions = {
-  async getSidebarNav({ commit }, callback) {
-    const sidebarNav = await this.$content("sidebarNav").fetch();
-    commit("setSidebarNavigation", sidebarNav);
+  async getTheTeam({ commit }, callback) {
+    let team = await this.$content("team").fetch();
+    team.sort((a, b) => {
+      return a.order - b.order;
+    })
+    commit("setTheTeam", team);
   },
-  async getInfos({ commit }, callback) {
-    const infos = await this.$content("infos").fetch();
-    commit("setInfos", infos);
+  async getTheContent({ commit }, callback) {
+    let content = await this.$content("content").fetch();
+    content.sort((a, b) => {
+      return a.order - b.order;
+    })
+    commit("setTheContent", content);
   },
-  async getMainMenus({ commit }, callback) {
-    const mainMenu = await this.$content("menu")
-      .where({ placed: "Startseite" })
-      .fetch();
-    commit("setMainMenus", mainMenu);
+  async getThePortfolioLogos({ commit }, callback) {
+    let portfolioLogos = await this.$content("portfolioLogos").fetch();
+    console.log(portfolioLogos);
+    commit("setThePortfolioLogos", portfolioLogos);
   },
-  async getOtherMenus({ commit }, callback) {
-    const subMenus = await this.$content("menu").fetch();
-    commit("setSubMenus", subMenus);
-  },
+  async getThePortfolio({ commit }, callback) {
+    let portfolio = await this.$content("portfolio").fetch();
+    commit("setThePortfolio", portfolio);
+  }
 };
