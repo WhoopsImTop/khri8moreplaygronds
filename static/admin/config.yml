@@ -54,7 +54,7 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Vorname Nachname", name: "title", widget: "string" }
       - { label: "Job Titel", name: "jobTitle", widget: "string", required: false }      
       - { label: "Email", name: "email", widget: "string", required: false } 
       - { label: "Bild", name: "image", widget: "image", required: false }
