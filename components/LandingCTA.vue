@@ -1,77 +1,60 @@
 <template>
-    <div class="highlight-container" ref="container" style="clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);">
+    <div @pointerover="getCoordinatesOnMouseMove" @mousemove="getCoordinatesOnMouseMove" @scroll="getCoordinatesOnMouseMove" class="highlight-container marquee"
+        ref="container" :style="'transform: rotate(-' + deg + 'deg)'">
         <div class="highlight-content form" v-if="showForm == 'true'">
-            <form action="Post">
-                <input type="text" placeholder="Email">
-                <button>{{ title }}</button>
-            </form>
+            <div class="marquee__inner">
+                <span v-for="i in 10" :key="i">{{ title }}</span>
+            </div>
+            <input type="text" placeholder="Email">
         </div>
         <div v-else class="highlight-content">
-            <button>{{ title }}</button>
+            <div class="marquee__inner">
+                <span v-for="i in 10" :key="i">{{ title }}</span>
+            </div>
         </div>
+        <div class="custom-cursor" ref="container" :style="'top:' + top + 'px; left:' + left + 'px'"></div>
     </div>
 </template>
 
 <script>
-import { equal } from 'assert';
+import gsap from 'gsap'
 
 export default {
-    props: ['title', 'showForm', 'pointsToManupulate', 'ratio'],
+    props: ['title', 'showForm', 'pointsToManupulate', 'deg'],
     data() {
         return {
-            height: 1.0,
-            style: null,
-            lastY: 0,
+            top: 0,
+            left: 0,
         }
     },
     methods: {
-        handleScroll() {
-            //check if user scrolles up or down
-            let currentY = window.scrollY;
-            if (currentY > this.lastY) {
-                //scroll down
-                this.lastY = window.scrollY;
-                this.height -= this.ratio;
-            } else {
-                //scroll up
-                this.lastY = window.scrollY;
-                this.height += this.ratio;
-            }
-            this.lastY = currentY;
+        getCoordinatesOnMouseMove(event) {
+            // get the mouse position in the container
+            let container = this.$refs.container;
+            let containerRect = container.getBoundingClientRect();
 
-            const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
-
-            let el = this.$refs.container;
-            if (equals(this.pointsToManupulate, [0, 0, 1, 0])) {
-                el.style.clipPath = `polygon(0 0, 100% 0, 100% ${90 * this.height}%, 0 100%)`
-            } else if(equals(this.pointsToManupulate, [1, 1, 1, 1])) {
-                el.style.clipPath = `polygon(0 ${90 - (90 * this.height)}%, 100% ${1 * this.height}%, 100% ${90 * this.height}%, 0 100%)`
-            } else if(equals(this.pointsToManupulate, [1, 0, 0, 0])) {
-                el.style.clipPath = `polygon(0 ${90 - (90 * this.height)}%, 100% 0, 100% 100%, 0 100%)`
-            }
-        },
-    },
-    mounted() {
-        if (!process.server) {
-            document.addEventListener('scroll', this.handleScroll);
+            let deltaX = (event.clientX - containerRect.left) - 20;
+            let deltaY = (event.clientY - containerRect.top) - 20;
+            gsap.to(this, { duration: 2, left: deltaX, ease: "elastic" });
+            gsap.to(this, { duration: 2, top: deltaY, ease: "elastic" })
         }
-    },
+    }
 }
 </script>
 
 <style scoped>
 .highlight-container {
     position: relative;
-    width: 100%;
+    width: 102%;
+    left: -1%;
     height: 100%;
-    padding: 100px 0;
+    padding: 50px 0;
     background-color: var(--primary-color);
 }
 
 .highlight-content {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .form {
@@ -90,5 +73,84 @@ export default {
 
 .form input {
     min-width: 300px;
+}
+
+.marquee {
+    position: relative;
+    overflow: hidden;
+}
+
+.marquee:hover {
+    --offset: 20vw;
+    --move-initial: calc(0% + var(--offset));
+    --move-final: calc(-20% + var(--offset));
+}
+
+.marquee__inner {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 5s linear infinite;
+    animation-play-state: paused;
+}
+
+.marquee span {
+    padding: 0 2vw;
+    word-break: keep-all;
+    white-space: nowrap;
+    font-size: 120px;
+    line-height: 1em;
+    font-weight: 800;
+    margin: 0px;
+    color: var(--paragraph-light);
+    text-transform: uppercase;
+}
+
+.marquee span:first-child {
+    display: flex;
+}
+
+.marquee span {
+    display: none;
+}
+
+.marquee:hover span {
+    display: flex;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px;
+}
+
+.marquee:hover span:hover {
+    -webkit-text-fill-color: var(--paragraph-light);
+    -webkit-text-stroke: 2px;
+}
+
+.marquee:hover .marquee__inner {
+    animation-play-state: running;
+}
+
+.marquee:hover {
+    cursor: none;
+}
+
+.marquee:hover .custom-cursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-blend-mode: difference;
+    background: #000000;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
 }
 </style>

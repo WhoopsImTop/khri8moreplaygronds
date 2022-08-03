@@ -1,5 +1,5 @@
 <template>
-  <div class="content-container row">
+  <div class="content-container row" :style="'transform: rotate(-' + deg + 'deg)'">
     <div v-for="(article, index) in content" :key="index" class="row-item">
     <h1>{{ article.title }}</h1>
     <p>{{ article.content }}</p>
@@ -10,6 +10,7 @@
 
 <script>
 export default {
+    props: ['deg'],
     computed: {
         content() {
             return this.$store.state.content;

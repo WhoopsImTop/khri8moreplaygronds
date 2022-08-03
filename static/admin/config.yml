@@ -4,14 +4,14 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: static/img
+media_folder: static/
 public_folder: /img
 
 collections:
-  - name: "infos"
-    label: "Aktuelles"
+  - name: "content"
+    label: "Kommunikation"
     format: "json"
-    folder: "content/infos"
+    folder: "content/content"
     create: false
     slug: "{{slug}}"
     editor:
@@ -19,52 +19,45 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "content", widget: "markdown", required: false }
-  - name: "sidebar"
-    label: "Seiten Navigaion"
+      - { label: "Reihenfolge", name: "order", widget: "number", required: false }
+  - name: "portfolio"
+    label: "Portfolio"
     format: "json"
-    folder: "content/sidebarNav"
+    folder: "content/portfolio"
     create: true
     slug: "{{slug}}"
     editor:
       preview: true
     fields:
-      - { label: "Überschrift", name: "title", widget: "string" }
-      - { label: "Untertitel", name: "subtitle", widget: "string", required: false }
-      - { label: "Link Text", name: "linkText", widget: "string", required: false }
-      - { label: "Link Adresse", name: "link", widget: "string", required: false }
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Bild", name: "src", widget: "image", required: false }
+      - { label: "Kurzbeschreibung", name: "content", widget: "markdown", required: false }
+      - { label: "Url", name: "link", widget: "string", required: false }
       - { label: "Beschreibung", name: "description", widget: "markdown", required: false}
-  - name: "speisekarten"
-    label: "Speisekarten"
+  - name: "portfolioLogos"
+    label: "Portfolio Logos"
     format: "json"
-    folder: "content/menu"
+    folder: "content/portfolioLogos"
     create: true
     slug: "{{slug}}"
     editor:
       preview: true
     fields:
-      - { label: "Name der Speisekarte", name: "title", widget: "string" }
-      - label: "Platzierung"
-        name: "placed"
-        widget: "select"
-        options:
-          - { label: "Startseite", value: "Startseite" }
-      - label: "Speisen"
-        name: "speisen"
-        widget: "list"
-        add_to_top: true
-        fields:
-          - {label: Gericht, name: food, widget: string }
-          - {label: Beilage (Optional), name: garnish, widget: string, required: false }
-          - {label: Preis, name: price, widget: number, value_type: "float" }
-      - { label: "Extra Beschreibung", name: "description", widget: "markdown", required: false }
-  - name: "important"
-    label: "Wichtige Seiten"
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Bild", name: "src", widget: "image", required: false }
+  - name: "team"
+    label: "Team"
     format: "json"
-    folder: "content/"
+    folder: "content/team"
     create: true
     slug: "{{slug}}"
     editor:
       preview: true
     fields:
-      - { label: "Überschrift", name: "title", widget: "string" }
-      - { label: "Beschreibung", name: "description", widget: "markdown", required: false }
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Job Titel", name: "jobTitle", widget: "string", required: false }      
+      - { label: "Email", name: "email", widget: "string", required: false } 
+      - { label: "Bild", name: "image", widget: "image", required: false }
+      - { label: "Bild", name: "image", widget: "image", required: false }
+      - { label: "Hervorgehoben", name: "featured", widget: "boolean", required: false }
+      

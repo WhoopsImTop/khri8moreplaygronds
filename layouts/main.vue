@@ -1,12 +1,10 @@
 <template>
   <div>
-    <Sidebar></Sidebar>
     <Nuxt class="content"></Nuxt>
   </div>
 </template>
 
 <script>
-import Sidebar from '../components/Sidebar.vue';
 export default {
   fetch() {
     this.$store.dispatch('getTheTeam');
@@ -14,7 +12,7 @@ export default {
     this.$store.dispatch('getThePortfolioLogos');
     this.$store.dispatch('getThePortfolio');
   },
-  components: { Sidebar },
+  components: {  },
 };
 </script>
 
@@ -62,6 +60,28 @@ h3 {
   color: var(--heading-dark);
 }
 
+.welcome-container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--paragraph-light);
+}
+
+.welcome-container h1 {
+  font-size: 100px;
+  line-height: 100px;
+}
+
+.welcome-container h3 {
+  font-size: 40px;
+  line-height: 45px;
+}
+
+.welcome-container-content {
+  display: flex;
+  align-items: center;
+  transform: rotate(-1deg);
+}
+
 p {
   font-size: 18px;
   line-height: 1.5em;
@@ -80,8 +100,8 @@ a {
 }
 
 .content {
-  max-width: calc(100vw - 225px);
-  margin-left: 225px;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 button {

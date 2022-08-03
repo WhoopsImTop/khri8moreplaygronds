@@ -1,5 +1,5 @@
 <template>
-    <div class="content-container">
+    <div class="content-container" :style="'transform: rotate(-' + deg + 'deg)'">
         <div class="team">
             <div class="team-item" v-for="(member, index) in team" :key="index">
                 <div class="team-overlay">
@@ -28,12 +28,13 @@
 
 <script>
 export default {
+    props: ['deg'],
     computed: {
         team() {
             // return team members that are not featured
-            let featured = this.$store.state.team.filter(member => member.featured);
+            //let featured = this.$store.state.team.filter(member => member.featured);
             let team = this.$store.state.team.filter(member => !member.featured);
-            return team.concat(featured);
+            return team //.concat(featured);
         },
     },
 }
@@ -50,6 +51,7 @@ export default {
     grid-gap: 50px;
     justify-content: center;
     align-items: center;
+    margin: 50px 0 0 0;
 }
 
 .featured {
@@ -71,14 +73,14 @@ export default {
 }
 
 .team-image:hover {
-    opacity: 0.3;
+    opacity: 0.5;
     transition: opacity .3s ease-in-out;
 }
 
 .team-image {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 5px;
     display: flex;
     transition: opacity .3s ease-in-out;
 }
@@ -89,7 +91,7 @@ export default {
     align-items: center;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 5px;
     background-color: transparent;
     transition: .3s ease-in-out;
 }
