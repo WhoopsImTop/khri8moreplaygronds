@@ -24,6 +24,7 @@ collections:
     label: "Portfolio"
     format: "json"
     folder: "content/portfolio"
+    media_folder: static/{{slug}}
     create: true
     slug: "{{slug}}"
     editor:
@@ -34,8 +35,6 @@ collections:
         name: "src"
         widget: "image"
         required: false
-        config: 
-          media_folder: "{{slug}}"
       - { label: "Kurzbeschreibung", name: "content", widget: "markdown", required: false }
       - { label: "Url", name: "link", widget: "string", required: false }
       - { label: "Beschreibung", name: "description", widget: "markdown", required: false}
@@ -43,7 +42,7 @@ collections:
     label: "Portfolio Logos"
     format: "json"
     folder: "content/portfolioLogos"
-    media_folder: "{{slug}}"
+    media_folder: static/{{slug}}
     create: true
     slug: "{{slug}}"
     editor:
@@ -59,7 +58,7 @@ collections:
     label: "Team"
     format: "json"
     folder: "content/team"
-    media_folder: "{{slug}}"
+    media_folder: static/{{slug}}
     create: true
     slug: "{{slug}}"
     editor:
