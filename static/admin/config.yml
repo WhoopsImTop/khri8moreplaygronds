@@ -24,7 +24,7 @@ collections:
     label: "Portfolio"
     format: "json"
     folder: "content/portfolio"
-    media_folder: static/{{slug}}
+    media_folder: /{{slug}}
     create: true
     slug: "{{slug}}"
     editor:
