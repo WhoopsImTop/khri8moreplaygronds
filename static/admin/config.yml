@@ -19,7 +19,12 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "content", widget: "markdown", required: false }
-      - { label: "Reihenfolge", name: "order", widget: "number", required: false }
+      - {
+          label: "Reihenfolge",
+          name: "order",
+          widget: "number",
+          required: false,
+        }
   - name: "portfolio"
     label: "Portfolio"
     format: "json"
@@ -31,9 +36,19 @@ collections:
     fields:
       - { label: "Titel", name: "title", widget: "string" }
       - { label: "Bild", name: "src", widget: "image", required: false }
-      - { label: "Kurzbeschreibung", name: "content", widget: "markdown", required: false }
+      - {
+          label: "Kurzbeschreibung",
+          name: "content",
+          widget: "markdown",
+          required: false,
+        }
       - { label: "Url", name: "link", widget: "string", required: false }
-      - { label: "Beschreibung", name: "description", widget: "markdown", required: false}
+      - {
+          label: "Beschreibung",
+          name: "description",
+          widget: "markdown",
+          required: false,
+        }
   - name: "portfolioLogos"
     label: "Portfolio Logos"
     format: "json"
@@ -55,4 +70,23 @@ collections:
       preview: true
     fields:
       - { label: "Vorname Nachname", name: "title", widget: "string" }
-      
+      - {
+          label: "Job Titel",
+          name: "jobTitle",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Bild", name: "image", widget: "image", required: false }
+      - {
+          label: "Reihenfolge",
+          name: "order",
+          widget: "number",
+          required: false,
+        }
+      - {
+          label: "Hervorgehoben",
+          name: "featured",
+          widget: "boolean",
+          required: false,
+        }
