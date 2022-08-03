@@ -116,7 +116,7 @@ collections:
           required: false,
         }
   - name: "contact"
-    title: "Kontakt"
+    label: "Kontakt"
     format: "json"
     folder: "content/contact"
     create: true
