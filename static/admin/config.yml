@@ -24,9 +24,9 @@ collections:
     label: "Portfolio"
     format: "json"
     folder: "content/portfolio"
-    media_folder: /{{slug}}
     create: true
     slug: "{{slug}}"
+    media_folder: "{{slug}}"
     editor:
       preview: true
     fields:
