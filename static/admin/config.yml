@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
+local_backend: true
+
 publish_mode: editorial_workflow
 
 media_folder: static/
@@ -113,3 +115,19 @@ collections:
           widget: "boolean",
           required: false,
         }
+  - name: "contact"
+    title: "Kontakt"
+    format: "json"
+    folder: "content/contact"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Firma", name: "company", widget: "string" }
+      - { label: "Strasse", name: "street", widget: "string" }
+      - { label: "City", name: "city", widget: "string"}
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Telefon", name: "phone", widget: "string" }
+      - { label: "Karte", name: "location", widget: "map" }
