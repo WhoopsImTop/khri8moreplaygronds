@@ -33,8 +33,7 @@ collections:
     slug: "{{slug}}"
     editor:
       preview: true
-    media_folder: static/
-    public_folder: "portfolio"
+    media_folder: "../static/portfolio"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
       - label: "Bild"
@@ -65,8 +64,7 @@ collections:
     slug: "{{slug}}"
     editor:
       preview: true
-    media_folder: static/
-    public_folder: "portfolioLogos"
+    media_folder: "../static/portfolioLogos"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
       - label: "Bild"
@@ -85,8 +83,7 @@ collections:
     slug: "{{slug}}"
     editor:
       preview: true
-    media_folder: static/
-    public_folder: "team"
+    media_folder: "../static/team"
     fields:
       - { label: "Vorname Nachname", name: "title", widget: "string" }
       - {
