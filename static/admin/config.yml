@@ -55,9 +55,4 @@ collections:
       preview: true
     fields:
       - { label: "Vorname Nachname", name: "title", widget: "string" }
-      - { label: "Job Titel", name: "jobTitle", widget: "string", required: false }      
-      - { label: "Email", name: "email", widget: "string", required: false } 
-      - { label: "Bild", name: "image", widget: "image", required: false }
-      - { label: "Reihenfolge", name: "order", widget: "number", required: false }
-      - { label: "Hervorgehoben", name: "featured", widget: "boolean", required: false }
       
