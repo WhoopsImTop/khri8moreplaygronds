@@ -5,7 +5,7 @@ backend:
 publish_mode: editorial_workflow
 
 media_folder: static/
-public_folder: "{{slug}}"
+public_folder: /
 
 collections:
   - name: "content"
@@ -34,6 +34,9 @@ collections:
         name: "src"
         widget: "image"
         required: false
+        media_library:
+          collection:
+            name: "portfolio"
       - { label: "Kurzbeschreibung", name: "content", widget: "markdown", required: false }
       - { label: "Url", name: "link", widget: "string", required: false }
       - { label: "Beschreibung", name: "description", widget: "markdown", required: false}
@@ -52,6 +55,9 @@ collections:
         widget: "image"
         required: false
         choose_url: true
+        media_library:
+          collection:
+            name: "portfolioLogos"
   - name: "team"
     label: "Team"
     format: "json"
@@ -69,6 +75,9 @@ collections:
         widget: "image"
         required: false
         choose_url: true
+        media_library:
+          collection:
+            name: "team"
       - { label: "Reihenfolge", name: "order", widget: "number", required: false }
       - { label: "Hervorgehoben", name: "featured", widget: "boolean", required: false }
       
