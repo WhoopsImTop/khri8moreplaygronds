@@ -11,6 +11,7 @@ export default {
     this.$store.dispatch('getTheContent');
     this.$store.dispatch('getThePortfolioLogos');
     this.$store.dispatch('getThePortfolio');
+    this.$store.dispatch('getContact');
   },
   components: {  },
 };

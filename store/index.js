@@ -3,6 +3,7 @@ export const state = () => ({
   content: [],
   portfolioLogos: [],
   portfolio: [],
+  contact: [],
 });
 
 export const getters = {
@@ -10,6 +11,7 @@ export const getters = {
   getTheContent: (state) => JSON.parse(state.content),
   getThePortfolioLogos: (state) => JSON.parse(state.portfolioLogos),
   getThePortfolio: (state) => JSON.parse(state.portfolio),
+  getContact: (state) => JSON.parse(state.contact),
 };
 
 export const mutations = {
@@ -24,6 +26,9 @@ export const mutations = {
   },
   setThePortfolio(state, payload) {
     state.portfolio = payload;
+  },
+  setContact(state, payload) {
+    state.contact = payload;
   }
 };
 
@@ -44,11 +49,14 @@ export const actions = {
   },
   async getThePortfolioLogos({ commit }, callback) {
     let portfolioLogos = await this.$content("portfolioLogos").fetch();
-    console.log(portfolioLogos);
     commit("setThePortfolioLogos", portfolioLogos);
   },
   async getThePortfolio({ commit }, callback) {
     let portfolio = await this.$content("portfolio").fetch();
     commit("setThePortfolio", portfolio);
+  },
+  async getContact({ commit }, callback) {
+    let contact = await this.$content("contact").fetch();
+    commit("setContact", contact);
   }
 };

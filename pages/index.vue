@@ -16,6 +16,8 @@
         <LandingCTA title="News!" showForm=true :deg="3"></LandingCTA>
         <TeamSection :deg="3"></TeamSection>
         <LandingCTA title="Kontakt" showForm=false :deg="4"></LandingCTA>
+        <Contact :deg="4"></Contact>
+        <Footer></Footer>
     </div>
 </template>
 
@@ -24,9 +26,10 @@ import LandingCTA from '../components/LandingCTA.vue';
 import RowContent from '../components/rowContent.vue';
 import PortfolioSection from '../components/PortfolioSection.vue';
 import ArrowRight from '../components/arrow-right.vue';
+import Contact from '../components/contact.vue';
 export default {
     layout: "main",
-    components: { LandingCTA, RowContent, PortfolioSection, ArrowRight }
+    components: { LandingCTA, RowContent, PortfolioSection, ArrowRight, Contact }
 };
 </script>
 
