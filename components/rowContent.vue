@@ -2,7 +2,7 @@
   <div class="content-container row" :style="'transform: rotate(-' + deg + 'deg)'">
     <div v-for="(article, index) in content" :key="index" class="row-item">
     <h1>{{ article.title }}</h1>
-    <p>{{ article.content }}</p>
+    <p class="mb-50">{{ article.content }}</p>
     <a class="social" v-if="article.socials" :href="article.socials.instagram" target="_blank">Follow</a>
     </div>
   </div>
@@ -54,5 +54,9 @@ export default {
     background-image: url('/instagram.png');
     background-size: cover;
     background-position: center;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
 }
 </style>

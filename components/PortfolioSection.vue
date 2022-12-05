@@ -83,4 +83,20 @@ export default {
     transform: translate3d(var(--portfolio-slides), 0, 0);
   }
 }
+
+@media (max-width: 900px) {
+  .marquee-element {
+    min-width: 300px;
+    min-height: 150px;
+  }
+
+  .content-logos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .content-logos img {
+    max-width: 50%;
+  }
+}
 </style>

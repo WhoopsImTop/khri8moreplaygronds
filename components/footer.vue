@@ -40,4 +40,10 @@ export default {
     color: var(--paragraph-light);
 }
 
+@media (max-width: 900px) {
+    .footer-container {
+        justify-content: center;
+        clip-path: polygon(0 36%, 100% 0, 100% 100%, 0% 100%);
+    }    
+}
 </style>
