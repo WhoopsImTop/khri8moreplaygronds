@@ -4,7 +4,7 @@
             <div class="footer-content">
                 <nuxt-link to="impressum">Impressum</nuxt-link>
                 <span class="divider">|</span>
-                <nuxt-link to="impressum">Datenschutz</nuxt-link>
+                <nuxt-link to="datenschutz">Datenschutz</nuxt-link>
             </div>
         </div>
     </div>
