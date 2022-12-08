@@ -7,20 +7,19 @@
 <script>
 export default {
   fetch() {
-    this.$store.dispatch('getTheTeam');
-    this.$store.dispatch('getTheContent');
-    this.$store.dispatch('getThePortfolioLogos');
-    this.$store.dispatch('getThePortfolio');
-    this.$store.dispatch('getContact');
+    this.$store.dispatch("getTheTeam");
+    this.$store.dispatch("getTheContent");
+    this.$store.dispatch("getThePortfolioLogos");
+    this.$store.dispatch("getThePortfolio");
+    this.$store.dispatch("getContact");
   },
-  components: {  },
+  components: {},
 };
 </script>
 
 <style>
 * {
   font-family: karmina-sans, sans-serif;
-  ;
 }
 
 body {
@@ -119,14 +118,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 button::after {
-  content: '';
+  content: "";
   width: 0px;
   height: 20px;
-  background-image: url('/symbols/check.svg');
+  background-image: url("/symbols/check.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -138,11 +137,11 @@ button:hover {
 }
 
 button:hover::after {
-  content: '';
+  content: "";
   width: 20px;
   margin-left: 5px;
   height: 20px;
-  background-image: url('/symbols/check.svg');
+  background-image: url("/symbols/check.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -160,7 +159,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 input:focus {
@@ -170,17 +169,17 @@ input:focus {
 @media (max-width: 900px) {
   h1 {
     font-size: 40px;
-    line-height: 40px;
+    line-height: 45px;
   }
 
   h2 {
     font-size: 30px;
-    line-height: 30px;
+    line-height: 35px;
   }
 
   h3 {
     font-size: 20px;
-    line-height: 35px;
+    line-height: 25px;
   }
 
   p {
@@ -188,8 +187,35 @@ input:focus {
     margin: 0;
   }
 
+  .welcome-container h1 {
+    font-size: 50px;
+    line-height: 50px;
+    z-index: 99;
+  }
+
+  .welcome-container h3 {
+    font-size: 30px;
+    line-height: 30px;
+    z-index: 98;
+  }
+
   .content-container {
     padding: 0 30px;
   }
+
+  .welcome-container-content {
+    padding: 12vh 30px 0 30px;
+    align-items: unset;
+  }
+
+  .arrow {
+    position: absolute;
+    z-index: -1;
+    bottom: 10px;
+    left: -40px;
+    width: 50px;
+    object-fit: contain;
+  }
+
 }
 </style>

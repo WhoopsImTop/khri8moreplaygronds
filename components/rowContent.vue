@@ -55,4 +55,8 @@ export default {
     background-size: cover;
     background-position: center;
 }
+
+.mb-50 {
+    margin-bottom: 50px;
+}
 </style>

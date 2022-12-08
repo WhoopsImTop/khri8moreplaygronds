@@ -4,6 +4,7 @@ export const state = () => ({
   portfolioLogos: [],
   portfolio: [],
   contact: [],
+  isMobile: false,
 });
 
 export const getters = {
@@ -29,6 +30,9 @@ export const mutations = {
   },
   setContact(state, payload) {
     state.contact = payload;
+  },
+  setIsMobile(state, payload) {
+    state.isMobile = payload;
   }
 };
 

@@ -127,4 +127,14 @@ export default {
     text-decoration: none;
     color: var(--primary-color);
 }
+
+@media (max-width: 900px) {
+    .team-item {
+        width: 100%;
+    }
+
+    .team {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+}
 </style>
