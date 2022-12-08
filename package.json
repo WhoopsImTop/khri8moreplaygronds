@@ -7,7 +7,7 @@
     "url": "https://github.com/WhoopsImTop/khri8moreplaygronds.git"
   },
   "scripts": {
-    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"

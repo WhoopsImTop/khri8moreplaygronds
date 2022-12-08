@@ -56,21 +56,10 @@ export default {
       zoom: this.$store.state.isMobile ? 16 : this.initialState.zoom,
     });
 
-<<<<<<< HEAD
     //limit zoom level
     this.map.setMinZoom(14);
   }
 }
-=======
-    this.map.on("click", (e) => {
-      //get data from map
-      let data = e;
-
-      console.log(data);
-    });
-  },
-};
->>>>>>> 1fcfd24977aec6875570ea1f861e9a516c2ee8e3
 </script>
 
 <style>
