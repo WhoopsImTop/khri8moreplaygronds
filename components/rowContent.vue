@@ -1,11 +1,10 @@
 <template>
-  <div class="content-container row" :style="'transform: rotate(-' + deg + 'deg)'">
-    <div v-for="(article, index) in content" :key="index" class="row-item">
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.content }}</p>
-    <a class="social" v-if="article.socials" :href="article.socials.instagram" target="_blank">Follow</a>
+    <div class="content-container row" :style="'transform: rotate(-' + deg + 'deg); margin: 100px auto'">
+        <div>
+            <h1>Kommunikation ist kinderleicht.</h1>
+            <p>{{ content[0].content }}</p>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -27,6 +26,7 @@ export default {
     justify-content: space-between;
     padding: 50px 100px;
 }
+
 .row-item {
     width: 27%;
     min-width: 300px;

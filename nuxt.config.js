@@ -7,7 +7,7 @@ export default {
     htmlAttrs: {
       lang: "de",
     },
-    title: "khri8!™ more playgrounds",
+    title: "khri8! more playgrounds.",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },

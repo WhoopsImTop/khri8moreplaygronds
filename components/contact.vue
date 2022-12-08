@@ -43,12 +43,8 @@ export default {
       zoom: this.initialState.zoom
     });
 
-    this.map.on('click', (e) => {
-      //get data from map
-      let data = e;
-
-      console.log(data);
-    });
+    //limit zoom level
+    this.map.setMinZoom(14);
   }
 }
 </script>

@@ -45,19 +45,6 @@ collections:
         media_library:
           collection:
             name: "portfolio"
-      - {
-          label: "Kurzbeschreibung",
-          name: "content",
-          widget: "markdown",
-          required: false,
-        }
-      - { label: "Url", name: "link", widget: "string", required: false }
-      - {
-          label: "Beschreibung",
-          name: "description",
-          widget: "markdown",
-          required: false,
-        }
   - name: "portfolioLogos"
     label: "Portfolio Logos"
     format: "json"

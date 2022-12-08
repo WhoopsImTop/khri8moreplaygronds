@@ -84,8 +84,8 @@ h3 {
 }
 
 p {
-  font-size: 18px;
-  line-height: 1.5em;
+  font-size: 20px;
+  line-height: 1.8em;
   color: var(--paragraph-dark);
 }
 

@@ -3,8 +3,14 @@
   <div class="portfolio-conainer" :style="'transform: rotate(-' + deg + 'deg);'">
     <div class="content-container">
       <h1>Portfolio</h1>
-      <div class="content-logos">
-        <img v-for="(img, index) in $store.state.portfolioLogos" :key="index" :src="img.src" :alt="img.title">
+      <div class="logo-marquee-wrapper" :style="'transform: rotate(-' + deg + 'deg);'">
+        <div class="marquee-logo" v-for="(image, index) in $store.state.portfolioLogos" :key="index">
+          <img :src="image.src" :alt="image.title">
+        </div>
+
+        <div class="marquee-logo" v-for="(image, index) in $store.state.portfolioLogos" :key="index">
+          <img :src="image.src" :alt="image.title">
+        </div>
       </div>
       <!-- create a marquee slideshow -->
     </div>
@@ -27,6 +33,7 @@ export default {
   data: () => {
     return {
       portfolioSlides: 0,
+      portfolioLogoSlides: 0,
     }
   },
   computed: {
@@ -35,12 +42,15 @@ export default {
     this.portfolioSlides = -1 * (this.$store.state.portfolio.length * 2) * 310;
     //add css variable to root element
     document.documentElement.style.setProperty('--portfolio-slides', this.portfolioSlides + 'px');
+
+    this.portfolioLogoSlides = -1 * (this.$store.state.portfolioLogos.length * 2) * 100;
+    //add css variable to root element
+    document.documentElement.style.setProperty('--portfolioLogo-slides', this.portfolioLogoSlides + 'px');
   },
 }
 </script>
 
 <style scoped>
-
 .content-logos {
   display: flex;
   justify-content: space-between;
@@ -56,6 +66,14 @@ export default {
   margin-bottom: 100px;
 }
 
+.logo-marquee-wrapper {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  animation: marquee-reverse 20s linear infinite;
+  margin-bottom: 100px;
+}
+
 .marquee-element {
   min-width: 600px;
   min-height: 300px;
@@ -66,6 +84,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.marquee-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0 50px;
 }
 
 .marquee-element img {
@@ -81,6 +106,16 @@ export default {
 
   100% {
     transform: translate3d(var(--portfolio-slides), 0, 0);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(var(--portfolioLogo-slides), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 </style>

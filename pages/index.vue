@@ -9,11 +9,11 @@
                 </div>
             </div>
         </div>
-        <LandingCTA title="Check!" showForm=false :deg="1"></LandingCTA>
+        <LandingCTA title="Zack!" showForm=false :deg="1"></LandingCTA>
         <RowContent :deg="1"></RowContent>
-        <LandingCTA title="Bring!" showForm=false :deg="2"></LandingCTA>
+        <LandingCTA title="Bumm!" showForm=false :deg="2"></LandingCTA>
         <PortfolioSection :deg="2"></PortfolioSection>
-        <LandingCTA title="News!" showForm=true :deg="3"></LandingCTA>
+        <LandingCTA title="Bäng!" showForm=false :deg="3"></LandingCTA>
         <TeamSection :deg="3"></TeamSection>
         <LandingCTA title="Kontakt" showForm=false :deg="4"></LandingCTA>
         <Contact :deg="4"></Contact>
