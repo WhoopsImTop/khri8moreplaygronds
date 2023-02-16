@@ -1,5 +1,6 @@
 export default {
-  mode: "universal",
+  target: "static",
+  ssr: true,
   /*
    ** Headers of the page
    */
@@ -34,7 +35,7 @@ export default {
   plugins: [
     {
       src: "~/plugins/generatePDF.js",
-    } /* , { src: "~/plugins/swiper.js", ssr: false } */,
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -76,15 +77,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    standalone: true,
-    extend(config, ctx) {
-      // fix to work with swiperjs 8 add needed deps. you can get them from error when doing nuxt generate
-      config.externals = [
-        {
-          encoding: "encoding",
-        },
-      ];
-    },
   },
 
   router: {

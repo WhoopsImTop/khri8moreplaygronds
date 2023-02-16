@@ -25,7 +25,7 @@
         <LandingCTA title="Kontakt" showForm=false :deg="4"></LandingCTA>
         <Contact :deg="4"></Contact>
         <Footer></Footer>
-    </div>
+</div>
 </template>
 
 <script>
@@ -41,6 +41,10 @@ export default {
         if (!process.server) {
             //mutate isMobile state
             this.$store.commit("setIsMobile", window.innerWidth < 900);
+
+            //request animation frame
+            window.requestAnimationFrame(() => {
+            });
         }
     },
 };

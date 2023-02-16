@@ -1,5 +1,4 @@
 <template>
-
   <div class="portfolio-conainer" :style="'transform: rotate(-' + deg + 'deg);'">
     <div class="content-container">
       <h1>Portfolio</h1>
@@ -35,8 +34,6 @@ export default {
       portfolioSlides: 0,
       portfolioLogoSlides: 0,
     }
-  },
-  computed: {
   },
   beforeMount() {
     this.portfolioSlides = -1 * (this.$store.state.portfolio.length * 2) * 310;
