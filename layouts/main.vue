@@ -63,17 +63,6 @@ h3 {
 .welcome-container {
   display: flex;
   height: 100vh;
-  background-color: var(--paragraph-light);
-}
-
-.welcome-container h1 {
-  font-size: 100px;
-  line-height: 100px;
-}
-
-.welcome-container h3 {
-  font-size: 40px;
-  line-height: 45px;
 }
 
 .welcome-container-content {
@@ -185,18 +174,6 @@ input:focus {
   p {
     font-size: 18px;
     margin: 0;
-  }
-
-  .welcome-container h1 {
-    font-size: 50px;
-    line-height: 50px;
-    z-index: 99;
-  }
-
-  .welcome-container h3 {
-    font-size: 30px;
-    line-height: 30px;
-    z-index: 98;
   }
 
   .content-container {
