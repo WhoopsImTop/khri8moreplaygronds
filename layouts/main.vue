@@ -63,8 +63,16 @@ h3 {
 .welcome-container {
   display: flex;
   height: 100vh;
+  background-color: var(--paragraph-light);
 }
-
+.welcome-container h1 {
+  font-size: 100px;
+  line-height: 100px;
+}
+.welcome-container h3 {
+  font-size: 40px;
+  line-height: 45px;
+}
 .welcome-container-content {
   display: flex;
   align-items: center;
