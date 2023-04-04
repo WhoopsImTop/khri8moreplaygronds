@@ -29,5 +29,5 @@ jobs:
         username: sftp_khri8@ourmilliondollarhomepage.com
         password: ${{ secrets.password }}
         local-dir: './dist/'
-        server-dir: 'khri8-new/'
+        server-dir: 'htdocs/khri8-new/'
         port: 21
