@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="welcome-container">
-      <div class="welcome-container-content">
+      <!-- <div class="welcome-container-content">
         <ArrowRight
           color="#df1874"
           style="margin-right: 50px; margin-left: -5px"
@@ -17,6 +17,13 @@
             </h1>
           </div>
         </div>
+      </div> -->
+      <div class="translated-heading">
+        <h3 style="margin: 0px">khri8! more playgrounds.</h3>
+        <h1 style="margin: 0px">
+          Werbeagentur <br />
+          in Waldkirch.
+        </h1>
       </div>
     </div>
     <LandingCTA title="Zack!" showForm="false" :deg="1"></LandingCTA>
@@ -38,6 +45,7 @@ import PortfolioSection from "../components/PortfolioSection.vue";
 import ArrowRight from "../components/arrow-right.vue";
 import Contact from "../components/contact.vue";
 import LandingComponent from "../components/landingComponent.vue";
+import gsap from "gsap";
 export default {
   layout: "main",
   components: {
@@ -53,6 +61,18 @@ export default {
       //mutate isMobile state
       this.$store.commit("setIsMobile", window.innerWidth < 900);
     }
+  },
+  //create a flashy gsap animation for the welcome container
+  mounted() {
+    let container = document.querySelector(".translated-heading");
+    //make a mask transition for the welcome container
+    gsap.to(container, {
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+      clipPath: "polygon(0 0, 100% -20%, 100% 100%, -20% 100%)",
+      ease: "power2.inOut",
+    });
   },
 };
 </script>

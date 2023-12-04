@@ -63,11 +63,64 @@ h3 {
 .welcome-container {
   display: flex;
   height: 100vh;
-  background-color: var(--paragraph-light);
+  background-image: url("../static/khri8-more-playgrounds-landing.png");
+  background-size: cover;
+  background-position: center;
 }
+
+.translated-heading {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: matrix(1, -0.1, -0.05, 1, 0, 0);
+}
+
+.translated-heading h3::after {
+  background-color: #df1874;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: -10px;
+  bottom: 0px;
+  left: -20px;
+}
+
+.translated-heading h1::after {
+  background-color: #df1874;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: -10px;
+  bottom: 0px;
+  left: -20px;
+}
+
+.translated-heading h3 {
+  font-size: 40px;
+  line-height: 45px;
+  padding: 10px;
+  background-color: var(--paragraph-light);
+  position: relative;
+  bottom: -1px;
+}
+
+.translated-heading h1 {
+  font-size: 100px;
+  line-height: 100px;
+  padding: 10px 20px;
+  background-color: var(--paragraph-light);
+  position: relative;
+}
+
 .welcome-container h1 {
   font-size: 100px;
   line-height: 100px;
+  text-align: center;
 }
 .welcome-container h3 {
   font-size: 40px;
@@ -163,6 +216,15 @@ input:focus {
   outline: 1px solid var(--paragraph-light);
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 100px auto;
+  padding: 50px 100px;
+}
+
 @media (max-width: 900px) {
   h1 {
     font-size: 40px;
@@ -184,6 +246,23 @@ input:focus {
     margin: 0;
   }
 
+  .translated-heading h3 {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 10px;
+    background-color: var(--paragraph-light);
+    position: relative;
+    bottom: -1px;
+  }
+
+  .translated-heading h1 {
+    font-size: 50px;
+    line-height: 55px;
+    padding: 10px 20px;
+    background-color: var(--paragraph-light);
+    position: relative;
+  }
+
   .content-container {
     padding: 0 30px;
   }
@@ -202,5 +281,9 @@ input:focus {
     object-fit: contain;
   }
 
+  .row {
+    padding: 50px 30px;
+    margin-top: 30px;
+  }
 }
 </style>

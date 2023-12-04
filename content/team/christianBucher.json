@@ -2,7 +2,8 @@
   "title": "Christian Bucher",
   "jobTitle": "Diplom Designer, Creative Direction",
   "email": "bucher@khri8.com",
-  "image": "/team/christian-bucher-khri8.webp",
+  "image": "/team/professor_bucher.png",
+  "hoverImage": "/team/christian-bucher-khri8.webp",
   "order": 0,
   "featured": false
 }

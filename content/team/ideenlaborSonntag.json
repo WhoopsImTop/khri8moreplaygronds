@@ -1,8 +1,9 @@
 {
   "title": "Ideenlabor Sonntag",
-  "jobTitle": "Multidisziplinäres Netzwerk",
+  "jobTitle": "Coworking Space",
   "email": "https://www.ideenlabor-sonntag.de",
-  "image": "/team/ideenlabor_sonntag.png",
-  "order": "6",
-  "featured": true
+  "image": "/team/khri8-more-playgrounds-landing.png",
+  "hoverImage": "/team/khri8-more-playgrounds-landing.png",
+  "order": 6,
+  "featured": false
 }

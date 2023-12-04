@@ -2,7 +2,8 @@
   "title": "Elias Englen",
   "jobTitle": "Grafikdesigner, Webentwickler",
   "email": "englen@khri8.com",
-  "image": "/team/elias-englen-khri8.webp",
+  "image": "/team/elias_englen.png",
+  "hoverImage": "/team/elias-englen-khri8.webp",
   "order": 2,
   "featured": false
 }

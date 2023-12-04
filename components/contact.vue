@@ -40,6 +40,7 @@ export default {
       map: null,
       mapContainer: null,
       apiKey: "tx0bWkeJlS2k9FWCMNgS",
+      deg: 0,
     };
   },
   mounted() {
@@ -58,7 +59,12 @@ export default {
 
     //limit zoom level
     this.map.setMinZoom(14);
-  }
+  },
+  beforeMount() {
+    if(window.innerWidth < 900) {
+      this.deg = 0;
+    }
+  },
 }
 </script>
 

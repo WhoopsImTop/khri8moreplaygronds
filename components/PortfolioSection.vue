@@ -1,19 +1,33 @@
 <template>
-  <div class="portfolio-conainer" :style="'transform: rotate(-' + deg + 'deg);'">
+  <div
+    class="portfolio-conainer"
+    :style="'transform: rotate(-' + deg + 'deg);'"
+  >
     <div class="content-container">
-      <h1>Portfolio</h1>
-      <div class="logo-marquee-wrapper" :style="'transform: rotate(-' + deg + 'deg);'">
-        <div class="marquee-logo" v-for="(image, index) in $store.state.portfolioLogos" :key="index">
-          <img :src="image.src" :alt="image.title">
+      <!-- <h1>Portfolio</h1> -->
+      <div
+        class="logo-marquee-wrapper"
+        :style="'transform: rotate(-' + deg + 'deg);'"
+      >
+        <div
+          class="marquee-logo"
+          v-for="(image, index) in $store.state.portfolioLogos"
+          :key="index"
+        >
+          <img :src="image.src" :alt="image.title" />
         </div>
 
-        <div class="marquee-logo" v-for="(image, index) in $store.state.portfolioLogos" :key="index">
-          <img :src="image.src" :alt="image.title">
+        <div
+          class="marquee-logo"
+          v-for="(image, index) in $store.state.portfolioLogos"
+          :key="index"
+        >
+          <img :src="image.src" :alt="image.title" />
         </div>
       </div>
       <!-- create a marquee slideshow -->
     </div>
-    <div class="marquee-wrapper" :style="'transform: rotate(-' + deg + 'deg);'">
+    <!-- <div class="marquee-wrapper" :style="'transform: rotate(-' + deg + 'deg);'">
       <div class="marquee-element" v-for="(image, index) in $store.state.portfolio" :key="index">
         <img :src="image.src" :alt="image.title">
       </div>
@@ -21,30 +35,41 @@
       <div class="marquee-element" v-for="(image, index) in $store.state.portfolio" :key="index">
         <img :src="image.src" :alt="image.title">
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-
 export default {
-  props: ['deg'],
+  props: ["deg"],
   data: () => {
     return {
       portfolioSlides: 0,
       portfolioLogoSlides: 0,
-    }
+      deg: 0,
+    };
   },
   beforeMount() {
     this.portfolioSlides = -1 * (this.$store.state.portfolio.length * 2) * 310;
     //add css variable to root element
-    document.documentElement.style.setProperty('--portfolio-slides', this.portfolioSlides + 'px');
+    document.documentElement.style.setProperty(
+      "--portfolio-slides",
+      this.portfolioSlides + "px"
+    );
 
-    this.portfolioLogoSlides = -1 * (this.$store.state.portfolioLogos.length * 2) * 100;
+    this.portfolioLogoSlides =
+      -1 * (this.$store.state.portfolioLogos.length * 2) * 100;
     //add css variable to root element
-    document.documentElement.style.setProperty('--portfolioLogo-slides', this.portfolioLogoSlides + 'px');
+    document.documentElement.style.setProperty(
+      "--portfolioLogo-slides",
+      this.portfolioLogoSlides + "px"
+    );
+
+    if (window.innerWidth < 900) {
+      this.deg = 0;
+    }
   },
-}
+};
 </script>
 
 <style scoped>
@@ -60,7 +85,6 @@ export default {
   align-items: center;
   min-width: 100%;
   animation: marquee 40s linear infinite;
-  margin-bottom: 100px;
 }
 
 .logo-marquee-wrapper {
@@ -68,7 +92,6 @@ export default {
   align-items: center;
   min-width: 100%;
   animation: marquee-reverse 20s linear infinite;
-  margin-bottom: 100px;
 }
 
 .marquee-element {

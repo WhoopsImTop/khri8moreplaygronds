@@ -35,6 +35,7 @@ export default {
     return {
       top: 0,
       left: 0,
+      deg: 0,
     };
   },
   methods: {
@@ -53,6 +54,11 @@ export default {
       gsap.to(this, { duration: 2, left: x, ease: "elastic" });
       gsap.to(this, { duration: 2, top: y, ease: "elastic" });
     },
+  },
+  beforeMount() {
+    if(window.innerWidth < 900) {
+      this.deg = 0;
+    }
   },
 };
 </script>
