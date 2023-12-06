@@ -60,12 +60,28 @@ h3 {
   color: var(--heading-dark);
 }
 
-.welcome-container {
-  display: flex;
+.welcomeSlider {
+  position: relative;
   height: 100vh;
-  background-image: url("../static/khri8-more-playgrounds-landing.png");
+  overflow: hidden;
+}
+
+.welcome-container.active {
+  z-index: 1;
+}
+
+.welcome-container {
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
 }
 
 .translated-heading {

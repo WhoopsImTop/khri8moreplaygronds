@@ -4,7 +4,7 @@
     :style="'transform: rotate(-' + deg + 'deg);'"
   >
     <div>
-      <h1>Kommunikation ist kinderleicht.</h1>
+      <h1>khri8 heisst erschaffen.</h1>
       <p v-html="$md.render(content[0].content)"></p>
     </div>
   </div>

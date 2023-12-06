@@ -1,38 +1,12 @@
 <template>
   <div>
-    <div class="welcome-container">
-      <!-- <div class="welcome-container-content">
-        <ArrowRight
-          color="#df1874"
-          style="margin-right: 50px; margin-left: -5px"
-        ></ArrowRight>
-        <div>
-          <div class="overflow-hidden">
-            <h3 style="margin: 0px">khri8! more playgrounds.</h3>
-          </div>
-          <div class="overflow-hidden">
-            <h1 style="margin: 15px 0">
-              Werbeagentur <br />
-              in Waldkirch.
-            </h1>
-          </div>
-        </div>
-      </div> -->
-      <div class="translated-heading">
-        <h3 style="margin: 0px">khri8! more playgrounds.</h3>
-        <h1 style="margin: 0px">
-          Werbeagentur <br />
-          in Waldkirch.
-        </h1>
-      </div>
-    </div>
-    <LandingCTA title="Zack!" showForm="false" :deg="1"></LandingCTA>
+    <landingSlider></landingSlider>
     <RowContent :deg="1"></RowContent>
-    <LandingCTA title="Bumm!" showForm="false" :deg="2"></LandingCTA>
+    <LandingCTA title="Zack!" showForm="false" :deg="1"></LandingCTA>
     <PortfolioSection :deg="2"></PortfolioSection>
-    <LandingCTA title="Bäng!" showForm="false" :deg="3"></LandingCTA>
+    <LandingCTA title="Bumm!" showForm="false" :deg="2"></LandingCTA>
     <TeamSection :deg="3"></TeamSection>
-    <LandingCTA title="Kontakt" showForm="false" :deg="4"></LandingCTA>
+    <LandingCTA title="Bäng!" showForm="false" :deg="3"></LandingCTA>
     <Contact :deg="4"></Contact>
     <Footer></Footer>
   </div>
@@ -61,18 +35,6 @@ export default {
       //mutate isMobile state
       this.$store.commit("setIsMobile", window.innerWidth < 900);
     }
-  },
-  //create a flashy gsap animation for the welcome container
-  mounted() {
-    let container = document.querySelector(".translated-heading");
-    //make a mask transition for the welcome container
-    gsap.to(container, {
-      opacity: 1,
-      duration: 1,
-      delay: 0.5,
-      clipPath: "polygon(0 0, 100% -20%, 100% 100%, -20% 100%)",
-      ease: "power2.inOut",
-    });
   },
 };
 </script>

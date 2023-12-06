@@ -27,8 +27,6 @@
 </template>
 
 <script>
-import gsap from "gsap";
-
 export default {
   props: ["title", "showForm", "pointsToManupulate", "deg"],
   data() {
