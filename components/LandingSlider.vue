@@ -46,65 +46,53 @@ export default {
     };
   },
   mounted() {
-    // Starte die GSAP-Animation alle 5 Sekunden
-    this.animateSlide();
+    // Wechsle die Slide alle 10 Sekunden
+    //mask should be hidden at the beginning
+      this.animateSlide();
     setInterval(() => {
       this.animateSlide();
-    }, 4980);
-
-    // Wechsle die Slide alle 10 Sekunden
-    setInterval(() => {
-      this.changeSlide();
     }, 5000); // Animation dauert 4 Sekunden, daher alle 10 Sekunden wechseln
   },
   methods: {
-    changeSlide() {
-      if (this.currentSlide === this.slides.length - 1) {
-        this.currentSlide = 0;
-      } else {
-        this.currentSlide++;
-      }
-    },
     animateSlide() {
       const mask = this.$refs.mask;
       const currentSlide = document.querySelector(".welcome-container");
       const tl = gsap.timeline();
 
-      tl.set(mask, { scaleX: 1 }); // Setze die Anfangsposition der Maske
-      tl.set(currentSlide, { opacity: 1 }); // Setze die Anfangsposition der Slide
-
       tl.to(mask, {
-        duration: 0.3,
+        opacity: 1, // Fade die Slide aus
+        delay: 0.5,
+        duration: 0.5,
         scaleX: 0, // Bewege die Maske von rechts nach links
         transformOrigin: "right center",
         ease: "power2.inOut",
       })
-        .to(
-          currentSlide,
-          {
-            duration: 4, // Zeige die Slide für mindestens 4 Sekunden
-            opacity: 1,
+        .to(mask, {
+          duration: 0.5,
+          opacity: 1, // Fade die Slide ein
+          scaleX: 1, // Bewege die Maske von links nach rechts
+          transformOrigin: "left center",
+          ease: "power2.inOut",
+          onComplete: () => {
+            if (this.currentSlide === this.slides.length - 1) {
+              this.currentSlide = 0;
+            } else {
+              this.currentSlide++;
+            }
+
+            // Aktualisiere den Hintergrund der neuen Slide
+            const currentSlide = document.querySelector(".welcome-container");
+            currentSlide.style.backgroundImage = `url(${
+              this.slides[this.currentSlide].image
+            })`;
           },
-          "-=0.1"
-        )
-        .to(
-          mask,
-          {
-            duration: 0.3,
-            scaleX: 1, // Bewege die Maske von links nach rechts
-            transformOrigin: "left center",
-            ease: "power2.inOut",
-          },
-          "-=0.1"
-        )
-        .to(
-          currentSlide,
-          {
-            duration: 0.3,
-            opacity: 0, // Fade die Slide aus
-          },
-          "-=0.1"
-        );
+        })
+        .to(mask, {
+          duration: 0.3,
+          scaleX: 0, // Bewege die Maske von rechts nach links
+          transformOrigin: "right center",
+          ease: "power2.inOut",
+        });
     },
   },
 };
