@@ -34,12 +34,12 @@ export default {
         },
         {
           title: "khri8! more playgrounds.",
-          content: "Werbeagentur <br/> in Waldkirch.",
+          content: "Ideenlabor <br/> in Waldkirch.",
           image: "/professor_bucher_khri8!.jpg",
         },
         {
           title: "khri8! more playgrounds.",
-          content: "Werbeagentur <br/> in Waldkirch.",
+          content: "Webdelevopment <br/> in Waldkirch.",
           image: "/webdev_khri8.jpg",
         },
       ],

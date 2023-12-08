@@ -4,7 +4,7 @@
     :style="'transform: rotate(-' + deg + 'deg);'"
   >
     <div>
-      <h1>khri8 heisst erschaffen.</h1>
+      <h1 style="line-height: 30px;">khri8 heisst erschaffen.<br><span class="lautschrift">['create']</span></h1>
       <p v-html="$md.render(content[0].content)"></p>
     </div>
   </div>
@@ -36,6 +36,11 @@ export default {
 .row-item {
   width: 27%;
   min-width: 300px;
+}
+
+.lautschrift {
+  font-size: 26px;
+  color: var(--primary-color);
 }
 
 .social {
