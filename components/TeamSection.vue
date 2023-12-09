@@ -1,5 +1,5 @@
 <template>
-  <div class="content-container" :style="'transform: rotate(-' + deg + 'deg)'">
+  <div class="content-container" :style="'transform: rotate(-' + degree + 'deg)'">
     <div class="team">
       <div class="team-item" v-for="(member, index) in team" :key="index">
         <div class="team-image-container">
@@ -27,7 +27,7 @@ export default {
   props: ["deg"],
   data: () => {
     return {
-      deg: 0,
+      degree: 0,
     };
   },
   computed: {
@@ -38,7 +38,9 @@ export default {
   },
   beforeMount() {
     if (window.innerWidth < 900) {
-      this.deg = 0;
+      this.degree = 0;
+    } else {
+      this.degree = this.deg;
     }
   },
 };

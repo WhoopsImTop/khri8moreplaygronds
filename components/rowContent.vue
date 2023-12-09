@@ -1,7 +1,7 @@
 <template>
   <div
     class="content-container row"
-    :style="'transform: rotate(-' + deg + 'deg);'"
+    :style="'transform: rotate(-' + degree + 'deg);'"
   >
     <div>
       <h1 style="line-height: 30px;">khri8 heisst erschaffen.<br><span class="lautschrift">['create']</span></h1>
@@ -15,7 +15,7 @@ export default {
   props: ["deg"],
   data() {
     return {
-      deg: 0,
+      degree: 0,
     };
   },
   computed: {
@@ -25,9 +25,11 @@ export default {
   },
   beforeMount() {
     if (window.innerWidth < 900) {
-      this.deg = 0;
+      this.degree = 0;
+    } else {
+      this.degree = this.deg;
     }
-  },
+  }, 
 };
 </script>
 

@@ -2,7 +2,7 @@
   <div>
     <div
       class="content-container contact"
-      :style="'transform: rotate(-' + deg + 'deg)'"
+      :style="'transform: rotate(-' + degree + 'deg)'"
     >
       <div class="map-container" id="mapContainer">
         <div class="contact-container">
@@ -40,7 +40,7 @@ export default {
       map: null,
       mapContainer: null,
       apiKey: "tx0bWkeJlS2k9FWCMNgS",
-      deg: 0,
+      degree: 0
     };
   },
   mounted() {
@@ -62,7 +62,9 @@ export default {
   },
   beforeMount() {
     if(window.innerWidth < 900) {
-      this.deg = 0;
+      this.degree = 0;
+    } else {
+      this.degree = this.deg;
     }
   },
 }

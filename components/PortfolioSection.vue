@@ -1,41 +1,25 @@
 <template>
   <div
     class="portfolio-conainer"
-    :style="'transform: rotate(-' + deg + 'deg);'"
+    :style="'transform: rotate(-' + degree + 'deg);'"
   >
     <div class="content-container">
       <!-- <h1>Portfolio</h1> -->
       <div
         class="logo-marquee-wrapper"
-        :style="'transform: rotate(-' + deg + 'deg);'"
+        :style="'transform: rotate(-' + degree + 'deg);'"
       >
-        <div
-          class="marquee-logo"
-          v-for="(image, index) in $store.state.portfolioLogos"
-          :key="index"
-        >
-          <img :src="image.src" :alt="image.title" />
-        </div>
 
         <div
           class="marquee-logo"
           v-for="(image, index) in $store.state.portfolioLogos"
           :key="index"
         >
-          <img :src="image.src" :alt="image.title" />
+          <img :src="image.src" :alt="image.title" height="250"/>
         </div>
       </div>
       <!-- create a marquee slideshow -->
     </div>
-    <!-- <div class="marquee-wrapper" :style="'transform: rotate(-' + deg + 'deg);'">
-      <div class="marquee-element" v-for="(image, index) in $store.state.portfolio" :key="index">
-        <img :src="image.src" :alt="image.title">
-      </div>
-
-      <div class="marquee-element" v-for="(image, index) in $store.state.portfolio" :key="index">
-        <img :src="image.src" :alt="image.title">
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -46,7 +30,7 @@ export default {
     return {
       portfolioSlides: 0,
       portfolioLogoSlides: 0,
-      deg: 0,
+      degree: 0,
     };
   },
   beforeMount() {
@@ -66,7 +50,9 @@ export default {
     );
 
     if (window.innerWidth < 900) {
-      this.deg = 0;
+      this.degree = 0;
+    } else {
+      this.degree = this.deg;
     }
   },
 };

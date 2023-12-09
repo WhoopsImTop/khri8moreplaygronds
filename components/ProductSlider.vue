@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="swiper" :style="'transform: rotate(-' + deg + 'deg)'">
+    <div class="swiper" :style="'transform: rotate(-' + degree + 'deg)'">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="slide in $store.state.portfolio" :key="slide.title">
           <img :src="slide.src" :alt="slide.title">
@@ -18,9 +18,21 @@
 // add or remove unused modules
 export default {
   props: ['deg'],
+  data() {
+    return {
+      degree: 0
+    }
+  },
   mounted() {
     
   },
+  beforeMount() {
+    if (window.innerWidth < 900) {
+      this.degree = 0;
+    } else {
+      this.degree = this.deg;
+    }
+  }
 }
 </script>
 

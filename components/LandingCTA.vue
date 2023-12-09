@@ -5,7 +5,7 @@
     @scroll="getCoordinatesOnMouseMove"
     class="highlight-container marquee"
     ref="container"
-    :style="'transform: rotate(-' + deg + 'deg)'"
+    :style="'transform: rotate(-' + degree + 'deg)'"
   >
     <div class="highlight-content form" v-if="showForm == 'true'">
       <div class="marquee__inner">
@@ -34,7 +34,7 @@ export default {
     return {
       top: 0,
       left: 0,
-      deg: 0,
+      degree: 0,
     };
   },
   methods: {
@@ -56,7 +56,9 @@ export default {
   },
   beforeMount() {
     if(window.innerWidth < 900) {
-      this.deg = 0;
+      this.degree = 0;
+    } else {
+      this.degree = this.deg;
     }
   },
 };

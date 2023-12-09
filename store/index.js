@@ -53,6 +53,9 @@ export const actions = {
   },
   async getThePortfolioLogos({ commit }, callback) {
     let portfolioLogos = await this.$content("portfolioLogos").fetch();
+    portfolioLogos.forEach(element => {
+      element.src = element.src.split('/static').join('');
+    });
     commit("setThePortfolioLogos", portfolioLogos);
   },
   async getThePortfolio({ commit }, callback) {
