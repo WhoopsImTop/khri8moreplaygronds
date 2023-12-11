@@ -17,10 +17,12 @@ export default {
         name: "description",
         content: "Creative Direction, Artworks, Design &amp; Communication",
       },
+      {
+        name: "keywords",
+        content: "Markenkomminikation in Waldkirch, Webentwicklung in Waldkirch, Werbeagentur in Waldkirch, Content creator Waldkirch, Werbeagentur, Marketing Agency Germany, Black Forest Agency, Black Forest, Schwarzwald, Schwarzwald Werbeagentur, Schwarzwald Marketing, Schwarzwald Marketing Agent, Wordpress Waldkirch, Wordpress Plugin entwicklung Waldkirch, Wordpress Plugin entwicklung",
+      },
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
-    ],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     link: [
       {
         rel: "stylesheet",

@@ -16,6 +16,15 @@
         </div>
       </div>
     </div>
+    <div class="slideActions">
+      <div
+        v-for="(slide, index) in slides"
+        :key="index"
+        class="slideAction"
+        :class="{ active: index === currentSlide }"
+        @click="currentSlide = index"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -34,12 +43,12 @@ export default {
         },
         {
           title: "khri8! more playgrounds.",
-          content: "Ideenlabor <br/> in Waldkirch.",
+          content: "Konzeption von <br> kreativen 'Spielplätzen'.",
           image: "/professor_bucher_khri8!.jpg",
         },
         {
           title: "khri8! more playgrounds.",
-          content: "Webdelevopment <br/> in Waldkirch.",
+          content: "Starker digitaler Auftritt. <br> #Webdevelopment",
           image: "/webdev_khri8.jpg",
         },
       ],
@@ -48,7 +57,7 @@ export default {
   mounted() {
     // Wechsle die Slide alle 10 Sekunden
     //mask should be hidden at the beginning
-      this.animateSlide();
+    this.animateSlide();
     setInterval(() => {
       this.animateSlide();
     }, 5000); // Animation dauert 4 Sekunden, daher alle 10 Sekunden wechseln
@@ -113,5 +122,29 @@ export default {
   background: var(--primary-color);
   z-index: 999;
   transform-origin: right center;
+}
+
+.slideActions {
+  position: absolute;
+  bottom: 0px;
+  right: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.slideAction {
+  width: 30px;
+  height: 30px;
+  background: var(--primary-color);
+  margin: 0 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.slideAction.active {
+  height: 60px;
+  background: #ffffff;
 }
 </style>

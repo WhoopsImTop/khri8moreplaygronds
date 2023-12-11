@@ -80,68 +80,43 @@ h3 {
   top: 0;
   left: 0;
   display: flex;
-  align-items: center;  
-  justify-content: center;
+}
+
+.welcome-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 8) 100%
+  );
+  z-index: 0;
 }
 
 .translated-heading {
-  margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transform: matrix(1, -0.1, -0.05, 1, 0, 0);
-}
-
-.translated-heading h3::after {
-  background-color: #df1874;
-  content: "";
-  width: 100%;
-  height: 100%;
   position: absolute;
-  z-index: -1;
-  top: -10px;
-  bottom: 0px;
-  left: -20px;
-}
-
-.translated-heading h1::after {
-  background-color: #df1874;
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  top: -10px;
-  bottom: 0px;
-  left: -20px;
+  bottom: 100px;
+  left: 150px;
+  z-index: 1;
 }
 
 .translated-heading h3 {
-  font-size: 40px;
+  font-size: 30px;
   line-height: 45px;
-  padding: 10px;
-  background-color: var(--paragraph-light);
-  position: relative;
-  bottom: -1px;
+  color: #ffffff;
 }
 
 .translated-heading h1 {
   font-size: 100px;
   line-height: 100px;
-  padding: 10px 20px;
-  background-color: var(--paragraph-light);
-  position: relative;
+  color: #ffffff;
 }
 
-.welcome-container h1 {
-  font-size: 100px;
-  line-height: 100px;
-  text-align: center;
-}
-.welcome-container h3 {
-  font-size: 40px;
-  line-height: 45px;
-}
 .welcome-container-content {
   display: flex;
   align-items: center;
@@ -262,21 +237,21 @@ input:focus {
     margin: 0;
   }
 
+  .translated-heading {
+    position: absolute;
+    left: 20px;
+    right: 0px;
+    bottom: 200px;
+  }
+
   .translated-heading h3 {
     font-size: 25px;
     line-height: 30px;
-    padding: 10px;
-    background-color: var(--paragraph-light);
-    position: relative;
-    bottom: -1px;
   }
 
   .translated-heading h1 {
-    font-size: 50px;
-    line-height: 55px;
-    padding: 10px 20px;
-    background-color: var(--paragraph-light);
-    position: relative;
+    font-size: 40px;
+    line-height: 45px;
   }
 
   .content-container {

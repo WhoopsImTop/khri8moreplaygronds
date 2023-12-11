@@ -4,21 +4,11 @@
     :style="'transform: rotate(-' + degree + 'deg);'"
   >
     <div class="content-container">
-      <!-- <h1>Portfolio</h1> -->
-      <div
-        class="logo-marquee-wrapper"
-        :style="'transform: rotate(-' + degree + 'deg);'"
-      >
-
-        <div
-          class="marquee-logo"
-          v-for="(image, index) in $store.state.portfolioLogos"
-          :key="index"
-        >
-          <img :src="image.src" :alt="image.title" height="250"/>
+      <div class="logo-grid">
+        <div class="logo-container" v-for="(logo, index) in $store.state.portfolioLogos" :key="index">
+          <img :src="logo.src" alt="logo" />
         </div>
       </div>
-      <!-- create a marquee slideshow -->
     </div>
   </div>
 </template>
@@ -99,12 +89,6 @@ export default {
   margin: 0 50px;
 }
 
-.marquee-element img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 @keyframes marquee {
   0% {
     transform: translate3d(0, 0, 0);
@@ -125,6 +109,22 @@ export default {
   }
 }
 
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-grid img {
+  width: 150px;
+}
+
 @media (max-width: 900px) {
   .marquee-element {
     min-width: 300px;
@@ -134,6 +134,16 @@ export default {
   .content-logos {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  } 
+
+  .logo-grid img {
+    max-width: 100%;
   }
 
   .content-logos img {
