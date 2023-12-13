@@ -57,17 +57,17 @@ export default {
   mounted() {
     // Wechsle die Slide alle 10 Sekunden
     //mask should be hidden at the beginning
-    this.animateSlide();
     setInterval(() => {
       this.animateSlide();
-    }, 5000); // Animation dauert 4 Sekunden, daher alle 10 Sekunden wechseln
+    }, 10000); // Animation dauert 4 Sekunden, daher alle 10 Sekunden wechseln
   },
   methods: {
     animateSlide() {
       const mask = this.$refs.mask;
       const currentSlide = document.querySelector(".welcome-container");
       const tl = gsap.timeline();
-
+      //hide mask at the beginning via width: 0
+      gsap.set(mask, { scaleX: 0 }); 
       tl.to(mask, {
         opacity: 1, // Fade die Slide aus
         delay: 0.5,
@@ -122,6 +122,7 @@ export default {
   background: var(--primary-color);
   z-index: 999;
   transform-origin: right center;
+  opacity: 0;
 }
 
 .slideActions {

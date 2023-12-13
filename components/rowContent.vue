@@ -4,9 +4,14 @@
     :style="'transform: rotate(-' + degree + 'deg);'"
   >
     <div>
-      <h1 style="line-height: 30px;">khri8 heisst erschaffen.<br><span class="lautschrift">['create']</span></h1>
+      <h1 style="line-height: 30px">
+        khri8 heisst erschaffen.<br /><span class="lautschrift"
+          >['create']</span
+        >
+      </h1>
       <p v-html="$md.render(content[0].content)"></p>
     </div>
+    <slot></slot>
   </div>
 </template>
 
@@ -29,12 +34,11 @@ export default {
     } else {
       this.degree = this.deg;
     }
-  }, 
+  },
 };
 </script>
 
 <style>
-
 .row-item {
   width: 27%;
   min-width: 300px;

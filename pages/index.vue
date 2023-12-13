@@ -1,7 +1,66 @@
 <template>
   <div>
     <landingSlider></landingSlider>
-    <RowContent :deg="1"></RowContent>
+    <RowContent :deg="1">
+      <div class="service-items">
+        <div class="grid-item-service">
+          <img src="corporate.svg" alt="corporate" width="80" />
+          <div class="content">
+            <h2 class="lautschrift">Corporate Identity & Corporate Design</h2>
+            <p>Die Marke. Wir schaffen Ihre unverwechselbare Identität.</p>
+          </div>
+        </div>
+        <div class="grid-item-service">
+          <img src="Brand_Management.svg" alt="corporate" width="80" />
+          <div class="content">
+            <h2 class="lautschrift">Content Creation</h2>
+            <p>
+              Social Media im Fokus. Wir bringen Ihre Botschaften mit kreativem
+              Content direkt zu Ihrer Zielgruppe.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item-service">
+          <img src="Communication.svg" alt="corporate" width="80" />
+          <div class="content">
+            <h2 class="lautschrift">Brand Communication</h2>
+            <p>
+              Klare Botschaften. Wir bringen Ihre Markengeschichte auf den
+              Punkt.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item-service">
+          <img src="development.svg" alt="corporate" width="80" />
+          <div class="content">
+            <h2 class="lautschrift">Webdevelopment</h2>
+            <p>
+              Starker digitaler Auftritt. Wir bilden überzeugende Websites und Applikationen.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item-service">
+          <img src="Employer_Branding.svg" alt="corporate" width="80" />
+          <div class="content">
+            <h2 class="lautschrift">Storytelling</h2>
+            <p>
+              Stories für jeden Zweck. Wir schreiben unvergessliche Geschichten
+              über Ihr Unternehmen, Marke und Produkte.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item-service">
+          <img src="Sustainable_Leadership.svg" alt="corporate" width="80" />
+          <div class="content">
+            <h2 class="lautschrift">Design</h2>
+            <p>
+              Vom Papier zum Pixel. Wir setzen Ideen in ein beeindruckendes
+              Design um.
+            </p>
+          </div>
+        </div>
+      </div>
+    </RowContent>
     <LandingCTA title="Zack!" showForm="false" :deg="1"></LandingCTA>
     <PortfolioSection :deg="2"></PortfolioSection>
     <LandingCTA title="Bumm!" showForm="false" :deg="2"></LandingCTA>
@@ -51,5 +110,32 @@ export default {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.service-items {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.grid-item-service {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.grid-item-service img {
+  margin-right: 30px;
+}
+
+.grid-item-service .content p {
+  margin: 0;
+}
+
+.grid-item-service .content h2 {
+  font-size: 30px;
+  line-height: 45px;
+  margin: 0;
+  color: var(--primary-color);
 }
 </style>
