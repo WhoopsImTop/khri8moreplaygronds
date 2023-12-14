@@ -4,58 +4,61 @@
     <RowContent :deg="1">
       <div class="service-items">
         <div class="grid-item-service">
-          <img src="corporate.svg" alt="corporate" width="80" />
           <div class="content">
-            <h2 class="lautschrift">Corporate Identity & Corporate Design</h2>
-            <p>Die Marke. Wir schaffen Ihre unverwechselbare Identität.</p>
-          </div>
-        </div>
-        <div class="grid-item-service">
-          <img src="Brand_Management.svg" alt="corporate" width="80" />
-          <div class="content">
-            <h2 class="lautschrift">Content Creation</h2>
+            <h2 style="color: #333333">Media Design</h2>
             <p>
-              Social Media im Fokus. Wir bringen Ihre Botschaften mit kreativem
-              Content direkt zu Ihrer Zielgruppe.
+              Vom Papier zum Pixel. Wir setzen Ideen in ein beeindruckendes
+              Design um.
             </p>
           </div>
         </div>
+
         <div class="grid-item-service">
-          <img src="Communication.svg" alt="corporate" width="80" />
           <div class="content">
-            <h2 class="lautschrift">Brand Communication</h2>
+            <h2 style="color: #333333">Webdevelopment</h2>
+            <p>
+              Starker digitaler Auftritt. Wir bilden überzeugende Websites und
+              Applikationen.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-item-service">
+          <div class="content">
+            <h2 style="color: #333333">
+              Corporate Identity
+            </h2>
+            <p>Die Marke. Wir schaffen Ihre unverwechselbare Identität.</p>
+          </div>
+        </div>
+
+        <div class="grid-item-service">
+          <div class="content">
+            <h2 style="color: #222222">Brand Communication</h2>
             <p>
               Klare Botschaften. Wir bringen Ihre Markengeschichte auf den
               Punkt.
             </p>
           </div>
         </div>
+
         <div class="grid-item-service">
-          <img src="development.svg" alt="corporate" width="80" />
           <div class="content">
-            <h2 class="lautschrift">Webdevelopment</h2>
+            <h2 style="color: #333333">Content Creation</h2>
             <p>
-              Starker digitaler Auftritt. Wir bilden überzeugende Websites und Applikationen.
+              Social Media im Fokus. Wir bringen Ihre Botschaften mit kreativem
+              Content direkt zu Ihrer Zielgruppe.
             </p>
           </div>
         </div>
+
+        
         <div class="grid-item-service">
-          <img src="Employer_Branding.svg" alt="corporate" width="80" />
           <div class="content">
-            <h2 class="lautschrift">Storytelling</h2>
+            <h2 style="color: #333333">Storytelling</h2>
             <p>
               Stories für jeden Zweck. Wir schreiben unvergessliche Geschichten
               über Ihr Unternehmen, Marke und Produkte.
-            </p>
-          </div>
-        </div>
-        <div class="grid-item-service">
-          <img src="Sustainable_Leadership.svg" alt="corporate" width="80" />
-          <div class="content">
-            <h2 class="lautschrift">Design</h2>
-            <p>
-              Vom Papier zum Pixel. Wir setzen Ideen in ein beeindruckendes
-              Design um.
             </p>
           </div>
         </div>
@@ -113,9 +116,9 @@ export default {
 }
 
 .service-items {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
 }
 
 .grid-item-service {
@@ -137,5 +140,11 @@ export default {
   line-height: 45px;
   margin: 0;
   color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+  .service-items {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 </style>
