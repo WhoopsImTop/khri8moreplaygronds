@@ -216,6 +216,28 @@ input:focus {
   padding: 50px 100px;
 }
 
+.stickyNavigation {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--menu-bg-color);
+  border-radius: 50px;
+  padding: 10px 15px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: karmina-sans, sans-serif;
+  color: var(--paragraph-dark);
+  font-weight: 600;
+  letter-spacing: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s;
+  z-index: 100;
+}
+
 @media (max-width: 900px) {
   h1 {
     font-size: 40px;

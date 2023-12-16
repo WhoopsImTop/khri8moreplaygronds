@@ -25,9 +25,7 @@
 
         <div class="grid-item-service">
           <div class="content">
-            <h2 style="color: #333333">
-              Corporate Identity
-            </h2>
+            <h2 style="color: #333333">Corporate Identity</h2>
             <p>Die Marke. Wir schaffen Ihre unverwechselbare Identität.</p>
           </div>
         </div>
@@ -52,7 +50,6 @@
           </div>
         </div>
 
-        
         <div class="grid-item-service">
           <div class="content">
             <h2 style="color: #333333">Storytelling</h2>
@@ -92,6 +89,52 @@ export default {
     Contact,
     LandingComponent,
   },
+
+  head() {
+    return {
+      title: "khri8! more playgrounds | Web- & Werbeagentur in Waldkirch",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Wir bieten Ihnen die Erstellung von Websites, Webshops, Corporate Identity, Brand Communication, Content Creation, Storytelling und vieles mehr.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "Webdesign, Webentwicklung, Webagentur, Werbeagentur, Waldkirch, Freiburg, Schwarzwald, khri8, khri8! more playgrounds, khri8! more playgrounds waldkirch, khri8! more playgrounds freiburg, khri8! more playgrounds schwarzwald, khri8! more playgrounds webdesign, khri8! more playgrounds webentwicklung, khri8! more playgrounds webagentur, khri8! more playgrounds werbeagentur, khri8! more playgrounds waldkirch webdesign, khri8! more playgrounds waldkirch webentwicklung, khri8! more playgrounds waldkirch webagentur, khri8! more playgrounds waldkirch werbeagentur, khri8! more playgrounds freiburg webdesign, khri8! more playgrounds freiburg webentwicklung, khri8! more playgrounds freiburg webagentur, khri8! more playgrounds freiburg werbeagentur, khri8! more playgrounds schwarzwald webdesign, khri8! more playgrounds schwarzwald webentwicklung, khri8! more playgrounds schwarzwald webagentur, khri8! more playgrounds schwarzwald werbeagentur",
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "khri8! more playgrounds | Web- & Werbeagentur in Waldkirch",
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content:
+            "Wir bieten Ihnen die Erstellung von Websites, Webshops, Corporate Identity, Brand Communication, Content Creation, Storytelling und vieles mehr.",
+        },
+      ],
+      script: [
+        {
+          type: "application/ld+json",
+          json: {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "khri8! more playgrounds",
+            alternateName: "khri8!",
+            url: "https://khri8.com",
+            logo: "",
+            sameAs: "https://www.instagram.com/khri8/",
+          },
+        },
+      ],
+    };
+  },
+
   created() {
     if (!process.server) {
       //mutate isMobile state
