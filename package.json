@@ -11,7 +11,7 @@
     "dev:win": "set NODE_OPTIONS=--openssl-legacy-provider && nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "export NODE_OPTIONS=--openssl-legacy-provider && nuxt generate"
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",

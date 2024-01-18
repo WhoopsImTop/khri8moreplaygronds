@@ -98,7 +98,7 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "Wir bieten Ihnen die Erstellung von Websites, Webshops, Corporate Identity, Brand Communication, Content Creation, Storytelling und vieles mehr.",
+            "Werbeagentur in Waldkirch für Websites, Webshops, Corporate Identity, Brand Communication, Content Creation, Storytelling und vieles mehr.",
         },
         {
           hid: "keywords",
