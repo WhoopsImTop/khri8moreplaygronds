@@ -92,7 +92,7 @@ export default {
 
   head() {
     return {
-      title: "khri8! more playgrounds | Web- & Werbeagentur in Waldkirch",
+      title: "khri8! more playgrounds. - Werbeagentur in Waldkirch",
       meta: [
         {
           hid: "description",
@@ -104,18 +104,18 @@ export default {
           hid: "keywords",
           name: "keywords",
           content:
-            "Webdesigner in Waldkirch, Logo erstellen lassen Freiburg, Wordpress entwickler Waldkirch, Webentwicklung, Webagentur, Werbeagentur, Waldkirch, Freiburg, Schwarzwald, khri8, khri8! more playgrounds, khri8! more playgrounds waldkirch, khri8! more playgrounds freiburg, khri8! more playgrounds schwarzwald, khri8! more playgrounds webdesign, khri8! more playgrounds webentwicklung, khri8! more playgrounds webagentur, khri8! more playgrounds werbeagentur, khri8! more playgrounds waldkirch webdesign, khri8! more playgrounds waldkirch webentwicklung, khri8! more playgrounds waldkirch webagentur, khri8! more playgrounds waldkirch werbeagentur, khri8! more playgrounds freiburg webdesign, khri8! more playgrounds freiburg webentwicklung, khri8! more playgrounds freiburg webagentur, khri8! more playgrounds freiburg werbeagentur, khri8! more playgrounds schwarzwald webdesign, khri8! more playgrounds schwarzwald webentwicklung, khri8! more playgrounds schwarzwald webagentur, khri8! more playgrounds schwarzwald werbeagentur",
+            "Werbeagentur in Waldkirch, Webdesigner in Waldkirch, Logo erstellen lassen Freiburg, Wordpress entwickler Waldkirch, Webentwicklung, Webagentur, Werbeagentur, Waldkirch, Freiburg, Schwarzwald, khri8, khri8! more playgrounds, khri8! more playgrounds waldkirch, khri8! more playgrounds freiburg, khri8! more playgrounds schwarzwald, khri8! more playgrounds webdesign, khri8! more playgrounds webentwicklung, khri8! more playgrounds webagentur, khri8! more playgrounds werbeagentur, khri8! more playgrounds waldkirch webdesign, khri8! more playgrounds waldkirch webentwicklung, khri8! more playgrounds waldkirch webagentur, khri8! more playgrounds waldkirch werbeagentur, khri8! more playgrounds freiburg webdesign, khri8! more playgrounds freiburg webentwicklung, khri8! more playgrounds freiburg webagentur, khri8! more playgrounds freiburg werbeagentur, khri8! more playgrounds schwarzwald webdesign, khri8! more playgrounds schwarzwald webentwicklung, khri8! more playgrounds schwarzwald webagentur, khri8! more playgrounds schwarzwald werbeagentur",
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: "khri8! more playgrounds | Web- & Werbeagentur in Waldkirch",
+          content: "khri8! more playgrounds. - Werbeagentur in Waldkirch",
         },
         {
           hid: "og:description",
           property: "og:description",
           content:
-            "Wir bieten Ihnen die Erstellung von Websites, Webshops, Corporate Identity, Brand Communication, Content Creation, Storytelling und vieles mehr.",
+            "Werbeagentur in Waldkirch für Websites, Webshops, Corporate Identity, Brand Communication, Content Creation, Storytelling und vieles mehr.",
         },
       ],
       script: [
@@ -124,7 +124,7 @@ export default {
           json: {
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "khri8! more playgrounds",
+            name: "khri8! more playgrounds - Werbeagentur in Waldkirch",
             alternateName: "khri8!",
             url: "https://khri8.com",
             logo: "",

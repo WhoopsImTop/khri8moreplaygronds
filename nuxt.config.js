@@ -8,18 +8,20 @@ export default {
     htmlAttrs: {
       lang: "de",
     },
-    title: "khri8! more playgrounds.",
+    title: "khri8! more playgrounds. - Werbeagentur in Waldkirch",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Creative Direction, Artworks, Design &amp; Communication",
+        content:
+          "Werbeagentur in Waldkirch für Websites, Webshops, Corporate Identity, Brand Communication, Content Creation, Storytelling und vieles mehr.",
       },
       {
         name: "keywords",
-        content: "Markenkomminikation in Waldkirch, Webentwicklung in Waldkirch, Werbeagentur in Waldkirch, Content creator Waldkirch, Werbeagentur, Marketing Agency Germany, Black Forest Agency, Black Forest, Schwarzwald, Schwarzwald Werbeagentur, Schwarzwald Marketing, Schwarzwald Marketing Agent, Wordpress Waldkirch, Wordpress Plugin entwicklung Waldkirch, Wordpress Plugin entwicklung",
+        content:
+          "Werbeagentur in Waldkirch, Webdesigner in Waldkirch, Logo erstellen lassen Freiburg, Wordpress entwickler Waldkirch, Webentwicklung, Webagentur, Werbeagentur, Waldkirch, Freiburg, Schwarzwald, khri8, khri8! more playgrounds, khri8! more playgrounds waldkirch, khri8! more playgrounds freiburg, khri8! more playgrounds schwarzwald, khri8! more playgrounds webdesign, khri8! more playgrounds webentwicklung, khri8! more playgrounds webagentur, khri8! more playgrounds werbeagentur, khri8! more playgrounds waldkirch webdesign, khri8! more playgrounds waldkirch webentwicklung, khri8! more playgrounds waldkirch webagentur, khri8! more playgrounds waldkirch werbeagentur, khri8! more playgrounds freiburg webdesign, khri8! more playgrounds freiburg webentwicklung, khri8! more playgrounds freiburg webagentur, khri8! more playgrounds freiburg werbeagentur, khri8! more playgrounds schwarzwald webdesign, khri8! more playgrounds schwarzwald webentwicklung, khri8! more playgrounds schwarzwald webagentur, khri8! more playgrounds schwarzwald werbeagentur",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
